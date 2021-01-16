@@ -1,10 +1,9 @@
 <template>
   <v-app>
     <AppHeader/>
-
-    <v-content>
+    <v-main>
       <router-view/>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
@@ -16,7 +15,6 @@
       name: 'App',
       components: { AppHeader },
       data: () => ( {
-      //
       } ),
   };
 </script>

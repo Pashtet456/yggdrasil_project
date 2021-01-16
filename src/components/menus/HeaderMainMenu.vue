@@ -9,26 +9,11 @@
     export default {
         name: 'HeaderMainMenu',
         components: { ListItemsMenu },
-        data: () => ( {
-            menu: [
-                [
-                    'yggdrasil',
-                    [
-                        { text: 'Главная', link: '/' },
-                        { text: 'Правила', link: '/lotr/main' },
-                        { text: 'Донат', link: '/donate' },
-                    ],
-                ],
-                [
-                    'lotr',
-                    [
-                        { text: 'sdasd', link: '/' },
-                        { text: 'asda', link: '/rules' },
-                        { text: 'Донasdaат', link: '/donate' },
-                    ],
-                ],
-            ],
-        } ),
+        props: {
+            menu: {
+                type: Array,
+            },
+        },
         methods: {
             currentMenu( projects ) {
                 try {

@@ -1,5 +1,5 @@
 <template>
-  <v-list class="d-flex">
+  <v-list class="d-flex pa-0" >
       <v-list-item v-for="item in menu" :key="item.link"
                    :ripple="false"
                    link>

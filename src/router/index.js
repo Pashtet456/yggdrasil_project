@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
 import Vuex from "../store/index";
 Vue.use( VueRouter );
 
@@ -8,22 +7,27 @@ const routes = [
     {
         path: '/',
         name: 'YgdMain',
-        component: Home,
+        component: () => import( /* webpackChunkName: "about" */ '../views/yggdrasil/YgdMain' ),
     },
     {
         path: '/rules',
         name: 'YgdRules',
-        component: () => import( /* webpackChunkName: "about" */ '../views/About.vue' ),
+        component: () => import( /* webpackChunkName: "about" */ '../views/yggdrasil/YgdRules' ),
     },
     {
         path: '/donate',
         name: 'YgdDonate',
-        component: Home,
+        component: () => import( /* webpackChunkName: "about" */ '../views/yggdrasil/YgdDonate' ),
     },
     {
-        path: '/lotr/main',
+        path: '/lotr/',
         name: 'LotrMain',
-        component: Home,
+        component: () => import( /* webpackChunkName: "about" */ '../views/lotr/LotrMain' ),
+    },
+    {
+        path: '/lotr/donate',
+        name: 'LotrDonate',
+        component: () => import( /* webpackChunkName: "about" */ '../views/lotr/LotrDonate' ),
     },
 ];
 

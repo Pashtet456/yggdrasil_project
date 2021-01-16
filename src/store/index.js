@@ -9,6 +9,7 @@ export default new Vuex.Store( {
         isAuth: false,
         app: {
             currentProject: 'yggdrasil',
+            primary: '#fff',
         },
     },
     getters: {
@@ -16,6 +17,7 @@ export default new Vuex.Store( {
     mutations: {
         changeCurrentProject( state, project ) {
             this.state.app.currentProject = project;
+            this.
         },
     },
     actions: {
