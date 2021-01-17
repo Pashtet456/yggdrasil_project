@@ -1,5 +1,5 @@
 <template>
-    <div>LotrMain</div>
+  <v-card class="dark"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, laborum!</v-card>
 </template>
 
 <script>

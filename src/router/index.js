@@ -1,33 +1,37 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Vuex from "../store/index";
+
 Vue.use( VueRouter );
 
 const routes = [
     {
         path: '/',
         name: 'YgdMain',
-        component: () => import( /* webpackChunkName: "about" */ '../views/yggdrasil/YgdMain' ),
+        component: () => import( '../views/yggdrasil/YgdMain' ),
     },
     {
         path: '/rules',
         name: 'YgdRules',
-        component: () => import( /* webpackChunkName: "about" */ '../views/yggdrasil/YgdRules' ),
+        component: () => import( '../views/yggdrasil/YgdRules' ),
+        props: {
+            theme: this,
+        },
     },
     {
         path: '/donate',
-        name: 'YgdDonate',
-        component: () => import( /* webpackChunkName: "about" */ '../views/yggdrasil/YgdDonate' ),
+        name: 'LotrMain1',
+        component: () => import( '../views/yggdrasil/YgdDonate' ),
     },
     {
         path: '/lotr/',
         name: 'LotrMain',
-        component: () => import( /* webpackChunkName: "about" */ '../views/lotr/LotrMain' ),
+        component: () => import( '../views/lotr/LotrMain' ),
     },
     {
         path: '/lotr/donate',
         name: 'LotrDonate',
-        component: () => import( /* webpackChunkName: "about" */ '../views/lotr/LotrDonate' ),
+        component: () => import( '../views/lotr/LotrDonate' ),
     },
 ];
 
@@ -38,11 +42,16 @@ const router = new VueRouter( {
 } );
 
 router.beforeEach( ( to, from, next ) => {
+    console.log( from );
     if ( to.name.match( /Ygd/ ) ) {
-        Vuex.commit( 'changeCurrentProject', 'yggdrasil' );
+        if ( Vuex.state.app.currentProject !== 'yggdrasil' ) {
+            Vuex.commit( 'changeCurrentProject', 'yggdrasil' );
+        }
         next();
     } else if ( to.name.match( /Lotr/ ) ) {
-        Vuex.commit( 'changeCurrentProject', 'lotr' );
+        if ( Vuex.state.app.currentProject !== 'lotr' ) {
+            Vuex.commit( 'changeCurrentProject', 'lotr' );
+        }
         next();
     } else {
         next();

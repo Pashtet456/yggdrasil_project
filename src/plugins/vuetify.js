@@ -5,7 +5,17 @@ Vue.use( Vuetify );
 
 export default new Vuetify( {
     theme: {
-        light: '#000',
+        themes: {
+            dark: {
+                dark: '#222',
+                primary: '#222',
+                secondary: '#333',
+                accent: '#444',
+                error: '#222',
+            },
+        },
+        dark: true,
     },
-} );
+},
+);
 
