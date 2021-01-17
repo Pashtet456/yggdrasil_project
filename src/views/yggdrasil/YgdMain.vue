@@ -11,11 +11,5 @@
 <script>
   export default {
       name: 'YgdMain',
-      mounted() {
-          if ( this ) {
-              console.log( this.$router.options.base );
-          }
-          console.log( this.$router.app.$store.state.app.currentProject );
-      },
   };
 </script>

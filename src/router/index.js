@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Vuex from "../store/index";
+import Vuex from '../store/index';
+
 
 Vue.use( VueRouter );
 
@@ -14,14 +15,11 @@ const routes = [
         path: '/rules',
         name: 'YgdRules',
         component: () => import( '../views/yggdrasil/YgdRules' ),
-        props: {
-            theme: this,
-        },
     },
     {
         path: '/donate',
-        name: 'LotrMain1',
-        component: () => import( '../views/yggdrasil/YgdDonate' ),
+        name: 'LotrMain',
+        component: () => import( '../views/lotr/LotrMain' ),
     },
     {
         path: '/lotr/',
@@ -42,20 +40,12 @@ const router = new VueRouter( {
 } );
 
 router.beforeEach( ( to, from, next ) => {
-    console.log( from );
     if ( to.name.match( /Ygd/ ) ) {
-        if ( Vuex.state.app.currentProject !== 'yggdrasil' ) {
-            Vuex.commit( 'changeCurrentProject', 'yggdrasil' );
-        }
-        next();
+        Vuex.commit( 'changeCurrentProject', 'yggdrasil' );
     } else if ( to.name.match( /Lotr/ ) ) {
-        if ( Vuex.state.app.currentProject !== 'lotr' ) {
-            Vuex.commit( 'changeCurrentProject', 'lotr' );
-        }
-        next();
-    } else {
-        next();
+        Vuex.commit( 'changeCurrentProject', 'lotr' );
     }
+    next();
 },
 );
 

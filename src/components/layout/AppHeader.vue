@@ -86,7 +86,9 @@
           currentMenu( menu ) {
               if ( this.$store.state.app.currentProject === 'yggdrasil' ) {
                   return menu.yggdrasil;
-              } else { return menu.lotr; }
+              } else if ( this.$store.state.app.currentProject === 'lotr' ) {
+                  return menu.lotr;
+              }
           },
       },
   };
