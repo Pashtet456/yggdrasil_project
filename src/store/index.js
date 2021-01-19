@@ -7,9 +7,9 @@ export default new Vuex.Store( {
     namespaced: true,
     state: {
         user: {
-            id: false,
-            avatar: false,
-            email: false,
+            id: undefined,
+            avatar: undefined,
+            email: undefined,
             dateRegistration: undefined,
             dateLastVisit: undefined,
         },
