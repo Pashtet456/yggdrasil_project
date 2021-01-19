@@ -1,10 +1,10 @@
 <template>
-    <div>LotrDonate</div>
+    <div>YgdRules</div>
 </template>
 
 <script>
     export default {
-        name: 'LotrDonate',
+        name: 'YgdRules',
     };
 </script>
 

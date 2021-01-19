@@ -9,17 +9,17 @@ const routes = [
     {
         path: '/',
         name: 'YgdMain',
-        component: () => import( '../views/yggdrasil/YgdMain' ),
+        component: () => import( '../views/yggdrasil/YggdrasilMain' ),
     },
     {
         path: '/rules',
         name: 'YgdRules',
-        component: () => import( '../views/yggdrasil/YgdRules' ),
+        component: () => import( '../views/yggdrasil/YggdrasilRules' ),
     },
     {
         path: '/donate',
-        name: 'LotrMain',
-        component: () => import( '../views/lotr/LotrMain' ),
+        name: 'YggDonate',
+        component: () => import( '../views/yggdrasil/YggdrasilDonate' ),
     },
     {
         path: '/lotr/',

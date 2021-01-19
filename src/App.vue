@@ -1,25 +1,32 @@
 <template>
-  <v-app v-if="this.$store.state.app.currentProject === 'yggdrasil'">
-    <AppHeader/>
-    <v-main>
-      <router-view/>
-    </v-main>
-  </v-app>
-  <v-app v-else-if="this.$store.state.app.currentProject === 'lotr'">
-    <AppHeader/>
-    <v-main>
-      <router-view/>
-    </v-main>
-  </v-app>
+    <v-app v-if="this.$store.state.app.currentProject === 'yggdrasil'">
+        <YggdrasilHeader/>
+        <v-main class="weqsdfs">
+            <router-view/>
+        </v-main>
+    </v-app>
+    <v-app v-else-if="this.$store.state.app.currentProject === 'lotr'">
+        <YggdrasilHeader/>
+        <v-main>
+            <router-view/>
+        </v-main>
+    </v-app>
 </template>
 
 <script>
-  import AppHeader from "./components/layout/AppHeader";
+    import YggdrasilHeader from "../src/components/yggdrasil/layout/YggdrasilHeader";
 
-  export default {
-      name: 'App',
-      components: { AppHeader },
-      data: () => ( {
-      } ),
-  };
+    export default {
+        name: 'App',
+        components: { YggdrasilHeader },
+        data: () => ( {
+        } ),
+    };
 </script>
+
+<style lang="scss" scoped>
+  .weqsdfs {
+    max-width: 1200px;
+    margin: auto;
+  }
+</style>

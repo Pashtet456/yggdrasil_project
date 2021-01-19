@@ -17,6 +17,9 @@ export default new Vuex.Store( {
             currentProject: 'yggdrasil',
         },
     },
+    getters: {
+        userIsLogin: state => state.user.id !== undefined,
+    },
     mutations: {
         changeCurrentProject( state, project ) {
             if ( project === 'yggdrasil' ) {
