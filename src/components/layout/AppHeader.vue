@@ -45,7 +45,7 @@
 </template>
 
 <script>
-    import ListItemsMenu from '@/components/menus/ListItemsMenu';
+    import ListItemsMenu from '@/components/yggdrasil/Header/ListItemsMenu';
 
     export default {
         name: 'AppHeader',

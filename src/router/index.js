@@ -31,6 +31,11 @@ const routes = [
         name: 'LotrDonate',
         component: () => import( '../views/lotr/LotrDonate' ),
     },
+    {
+        path: '/auth',
+        name: 'Auth',
+        component: () => import( '../views/Auth' ),
+    },
 ];
 
 const router = new VueRouter( {

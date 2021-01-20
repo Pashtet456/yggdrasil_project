@@ -1,11 +1,11 @@
 <template>
-    <v-app v-if="this.$store.state.app.currentProject === 'yggdrasil'">
+    <v-app v-if="this.$store.getters.currentProject === 'yggdrasil'">
         <YggdrasilHeader/>
         <v-main class="weqsdfs">
             <router-view/>
         </v-main>
     </v-app>
-    <v-app v-else-if="this.$store.state.app.currentProject === 'lotr'">
+    <v-app v-else-if="this.$store.getters.currentProject === 'lotr'">
         <YggdrasilHeader/>
         <v-main>
             <router-view/>
@@ -21,6 +21,7 @@
         components: { YggdrasilHeader },
         data: () => ( {
         } ),
+
     };
 </script>
 

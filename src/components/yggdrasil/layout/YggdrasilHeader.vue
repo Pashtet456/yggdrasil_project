@@ -26,7 +26,7 @@
 </template>
 
 <script>
-    import ListItemsMenu from '@/components/menus/ListItemsMenu';
+    import ListItemsMenu from '../Header/ListItemsMenu';
 
     export default {
         name: 'AppHeader',

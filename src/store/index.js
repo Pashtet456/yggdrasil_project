@@ -14,11 +14,12 @@ export default new Vuex.Store( {
             dateLastVisit: undefined,
         },
         app: {
-            currentProject: 'yggdrasil',
+            project: 'yggdrasil',
         },
     },
     getters: {
         userIsLogin: state => state.user.id !== undefined,
+        currentProject: state => state.app.project,
     },
     mutations: {
         changeCurrentProject( state, project ) {
