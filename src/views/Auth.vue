@@ -2,7 +2,8 @@
     <v-form
         ref="form"
         v-model="valid"
-        lazy-validation>
+        lazy-validation
+        @submit.prevent="submit">
 
         <v-text-field
             v-model="email"
@@ -10,6 +11,7 @@
             label="Email"/>
 
         <v-text-field
+            v-model="password"
             :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
             :rules="[rules.password, rules.required]"
             :type="show ? 'text' : 'password'"
@@ -17,17 +19,17 @@
             @click:append="show = !show"/>
 
         <v-text-field
-            :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
-            :rules="[rules.passwordConfirm]"
-            :type="show ? 'text' : 'password'"
+            v-model="passwordConfirm"
+            :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+            :rules="[rules.passwordConfirm, rules.required]"
+            :type="show1 ? 'text' : 'password'"
             label="passwordConfirm"
-            @click:append="show = !show"/>
+            @click:append="show1 = !show1"/>
 
         <v-checkbox
             v-model="checkbox"
-            :rules="[v => !!v || 'You must agree to continue!']"
-            label="Do you agree?"
-            required/>
+            :rules="[rules.checkboxConfirm]"
+            label="Правила сайта"/>
 
         <v-btn
             :disabled="!valid"
@@ -50,13 +52,16 @@
 <script>
     export default {
         name: 'Auth',
-        data: () => ( {
-            valid: true,
+        data: vm => ( {
+            valid: false,
             email: '',
             show: false,
+            show1: false,
+            password: '',
+            passwordConfirm: '',
             checkbox: false,
             rules: {
-                required: value => !!value || 'Обязательный.',
+                required: v => !!v || 'Обязательный',
                 min: v => v.length >= 8 || 'Минимум 8 символов',
                 email:  v => !v || /.+@.+\..+/.test( v ) || 'Некорректный email',
                 password: v => {
@@ -75,7 +80,11 @@
                     }
                     return true;
                 },
-                passwordConfirm: v => v === $values.password || 'Пароли должны совпадать',
+                passwordConfirm:  v => {
+                    if ( !vm.password ) return 'Введите пароль';
+                    if ( v !== vm.password ) return 'Пароли должны совпадать';
+                },
+                checkboxConfirm: v => !!v || 'Подтвердите согласие',
             },
         } ),
 
