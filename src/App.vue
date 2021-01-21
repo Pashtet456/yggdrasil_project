@@ -1,6 +1,9 @@
 <template>
-    <v-app v-if="this.$store.getters.currentProject === 'yggdrasil'">
-        <YggdrasilHeader/>
+    <v-app v-if="this.$store.getters.currentProject === 'yggdrasil'" class="v-app">
+        <v-navigation-drawer class="v-navigation-drawer">
+            <div>sdassddasd</div>
+        </v-navigation-drawer>
+        <YggdrasilHeader class="yggdrasil_dark"/>
         <v-main class="weqsdfs">
             <router-view/>
         </v-main>
@@ -38,5 +41,17 @@
     & .primary--text {
       color: greenyellow !important;
     }
+    & a {
+      color: sandybrown !important;
+        &:hover {
+          color: cornflowerblue !important;
+        }
+    }
+  }
+  .v-navigation-drawer {
+    position: absolute;
+  }
+  .v-app {
+    position: relative;
   }
 </style>
