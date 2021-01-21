@@ -11,7 +11,7 @@
             <!--Авторизованный пользователь-->
             <template v-if="userIsLogin">
                 <v-layout align-center>
-                    <app-user/>
+                    weqwe
                 </v-layout>
             </template>
 
@@ -41,7 +41,6 @@
         },
     };
 </script>
-
 
 <style lang="scss" scoped>
   .header__nav {

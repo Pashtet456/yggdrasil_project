@@ -1,52 +1,60 @@
 <template>
-    <v-form
-        ref="form"
-        v-model="valid"
-        lazy-validation
-        @submit.prevent="submit">
+    <v-card class="pa-5" rounded>
+        <v-form
+            ref="form"
+            v-model="valid"
+            lazy-validation
+            :class="this.$store.getters.currentProject === 'yggdrasil' ? 'yggdrasil_dark' : 'lotr_dark'"
+            class="auth-form"
+            @submit.prevent="submit">
 
-        <v-text-field
-            v-model="email"
-            :rules="[rules.required, rules.email]"
-            label="Email"/>
+            <v-text-field
+                v-model="email"
+                class="auth-form__text-field"
+                :rules="[rules.required, rules.email]"
+                label="Email"
+                outlined/>
 
-        <v-text-field
-            v-model="password"
-            :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
-            :rules="[rules.password, rules.required]"
-            :type="show ? 'text' : 'password'"
-            label="password"
-            @click:append="show = !show"/>
+            <v-text-field
+                v-model="password"
+                :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                :rules="[rules.password, rules.required]"
+                :type="show ? 'text' : 'password'"
+                label="password"
+                outlined
+                @click:append="show = !show"/>
 
-        <v-text-field
-            v-model="passwordConfirm"
-            :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-            :rules="[rules.passwordConfirm, rules.required]"
-            :type="show1 ? 'text' : 'password'"
-            label="passwordConfirm"
-            @click:append="show1 = !show1"/>
+            <v-text-field
+                v-model="passwordConfirm"
+                :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                :rules="[rules.passwordConfirm, rules.required]"
+                :type="show1 ? 'text' : 'password'"
+                label="passwordConfirm"
+                outlined
+                color="lotrError"
+                class="lotrError--text lotrError__message lotrError--text"
+                @click:append="show1 = !show1"/>
 
-        <v-checkbox
-            v-model="checkbox"
-            :rules="[rules.checkboxConfirm]"
-            label="Правила сайта"/>
+            <v-checkbox
+                v-model="checkbox"
+                :rules="[rules.checkboxConfirm]"
+                label="Правила сайта"/>
 
-        <v-btn
-            :disabled="!valid"
-            color="success"
-            class="mr-4"
-            @click="validate">
-            Validate
-        </v-btn>
-
-        <v-btn
-            color="error"
-            class="mr-4"
-            @click="reset">
-            Reset Form
-        </v-btn>
-
-    </v-form>
+            <div class="auth-form__footer">
+                <v-btn
+                    :disabled="!valid"
+                    color="success"
+                    class="mr-4"
+                    @click="validate">
+                    Validate
+                </v-btn>
+                <v-spacer/>
+                <router-link to="/auth" class="header__nav-login header__nav-item">
+                    Регистрация
+                </router-link>
+            </div>
+        </v-form>
+    </v-card>
 </template>
 
 <script>
@@ -98,3 +106,18 @@
         },
     };
 </script>
+
+<style lang="scss">
+  .auth-form {
+      min-width: 400px;
+
+      &__footer {
+          align-items: center;
+          display: flex;
+          width: 100%;
+      }
+  }
+  .v-application .yggdrasil_dark .error--text {
+    color: blue !important;
+  }
+</style>

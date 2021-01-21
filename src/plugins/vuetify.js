@@ -12,12 +12,13 @@ export default new Vuetify( {
         customProperties: true,
         themes: {
             dark: {
+                error: '',
+                dark: '',
+                primary: '',
+                secondary: '',
+                accent: '',
                 yggdrasilMain: '#000',
-                dark: '#2f4',
-                primary: '#2f4',
-                secondary: '#2f4',
-                accent: '#2f4',
-                error: '#2f4',
+                lotrError: '#f2f',
                 lotrDark: '#f11',
             },
         },
