@@ -25,9 +25,18 @@
     };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .weqsdfs {
     max-width: 1200px;
     margin: auto;
+  }
+
+  .v-application .yggdrasil_dark {
+    & .error--text {
+      color: red !important;
+    }
+    & .primary--text {
+      color: greenyellow !important;
+    }
   }
 </style>

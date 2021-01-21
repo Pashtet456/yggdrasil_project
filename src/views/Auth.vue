@@ -31,8 +31,6 @@
                 :type="show1 ? 'text' : 'password'"
                 label="passwordConfirm"
                 outlined
-                color="lotrError"
-                class="lotrError--text lotrError__message lotrError--text"
                 @click:append="show1 = !show1"/>
 
             <v-checkbox
@@ -117,7 +115,5 @@
           width: 100%;
       }
   }
-  .v-application .yggdrasil_dark .error--text {
-    color: blue !important;
-  }
+
 </style>
