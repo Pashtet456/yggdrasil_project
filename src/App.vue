@@ -3,9 +3,9 @@
         <v-navigation-drawer class="v-navigation-drawer">
             <div>sdassddasd</div>
         </v-navigation-drawer>
-        <YggdrasilHeader class="yggdrasil_dark"/>
+        <YggdrasilHeader class="yggdrasil yggdrasil-header"/>
         <v-main>
-            <v-container class="yggdrasil_main">
+            <v-container class="yggdrasil yggdrasil-main">
                 <router-view/>
             </v-container>
         </v-main>
@@ -31,17 +31,16 @@
 </script>
 
 <style lang="scss">
-  .yggdrasil{
+  .v-application .yggdrasil {
     &-main {
       max-width: 1200px;
       margin: auto;
+      text-align: center;
     }
     &-form {
       max-width: 500px;
       margin-top: 50px;
     }
-  }
-  .v-application .yggdrasil_dark {
     & .error--text {
       color: red !important;
     }

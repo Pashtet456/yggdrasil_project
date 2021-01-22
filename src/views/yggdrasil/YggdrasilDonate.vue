@@ -1,5 +1,5 @@
 <template>
-    <div>YgdDonate</div>
+    <div>Empty</div>
 </template>
 
 <script>
