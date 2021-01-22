@@ -2,7 +2,7 @@
     <v-app-bar app>
         <v-container class="pa-0 ma-0 d-flex align-center header">
             <!-- Логотип -->
-            <div class="header-logo">
+            <div class="header-logo__ygg d-flex align-center">
                 <router-link to="/">
                     <v-img
                         alt="Vuetify Logo"
@@ -10,6 +10,7 @@
                         :src="require('/src/assets/img/logo.png')"
                         :width="this.$vuetify.application.top - 5"/>
                 </router-link>
+                <span>Yggdrasil project</span>
             </div>
             <v-spacer/>
             <!-- Меню -->
@@ -18,7 +19,7 @@
             </div>
             <v-spacer/>
             <!-- Логотип -->
-            <div class="header-logo">
+            <div class="header-logo__vk">
                 <router-link to="/">
                     <v-img
                         alt="Vuetify Logo"
@@ -28,7 +29,7 @@
                 </router-link>
             </div>
             <!-- Логотип -->
-            <div class="header-logo">
+            <div class="header-logo__dis">
                 <router-link to="/">
                     <v-img
                         alt="Vuetify Logo"
@@ -72,5 +73,9 @@
 <style lang="scss" scoped>
   .header {
     max-width: 100%;
+    &-logo__ygg {
+      width: 118px;
+      white-space: nowrap;
+    }
   }
 </style>

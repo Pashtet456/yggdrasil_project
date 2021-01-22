@@ -1,8 +1,5 @@
 <template>
     <v-app v-if="this.$store.getters.currentProject === 'yggdrasil'">
-        <v-navigation-drawer class="v-navigation-drawer">
-            <div>sdassddasd</div>
-        </v-navigation-drawer>
         <YggdrasilHeader class="yggdrasil yggdrasil-header"/>
         <v-main>
             <v-container class="yggdrasil yggdrasil-main">
@@ -11,7 +8,6 @@
         </v-main>
     </v-app>
     <v-app v-else-if="this.$store.getters.currentProject === 'lotr'">
-        <YggdrasilHeader/>
         <v-main>
             <router-view/>
         </v-main>
