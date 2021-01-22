@@ -1,6 +1,6 @@
 <template>
     <div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, earum enim est incidunt laborum magni modi molestias nemo nulla obcaecati porro, quas ratione reprehenderit tempora tenetur ut voluptate voluptatibus. Assumenda, cumque distinctio dolor dolores illum impedit ipsum laboriosam magnam neque perspiciatis repudiandae, voluptas, voluptatibus. Aliquam aliquid consectetur cum dolorem dolorum earum esse ipsa ipsum itaque maiores minus natus nostrum numquam optio pariatur perferendis possimus quam, qui quos reiciendis repellat, sed similique voluptatibus? Ab aliquam corporis cumque doloribus eius eos esse facere illum impedit libero, maiores, minima pariatur perspiciatis qui sunt, suscipit voluptatum! Ab aliquid, commodi deleniti doloribus, earum, explicabo fugit minima non quidem rem rerum vero voluptate voluptatum. Accusantium ad aliquid aperiam asperiores beatae error esse ex maiores mollitia nam, necessitatibus nesciunt nihil odio pariatur praesentium quasi qui quibusdam quidem quos, recusandae sapiente sint soluta totam velit veniam? Dicta, distinctio, quam! Ad deleniti optio pariatur quia sapiente sunt, voluptatum? Debitis, officiis, vel. Ab corporis cupiditate dolore libero minima modi quisquam. Ad aliquam at blanditiis consequuntur corporis, delectus deserunt dolorum incidunt ipsam laboriosam, nihil nostrum nulla numquam officia officiis perspiciatis quibusdam, reiciendis rem sed tenetur totam ullam velit veniam vero voluptas. Architecto assumenda id nam officiis optio quod reprehenderit sunt voluptatum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad, amet aperiam asperiores, consequatur corporis, dolore et in ipsam laborum minima non officia quis rerum saepe sed ullam ut velit voluptatem voluptates. Autem cumque deserunt dicta dolore doloribus earum eius error excepturi ipsa itaque laboriosam, magnam maiores molestiae natus nihil nulla numquam provident quo, quos rerum sequi sint tempora temporibus veniam, voluptatibus? Atque beatae corporis deserunt dicta dignissimos doloremque doloribus eaque, fugit, labore maxime modi nobis nostrum perspiciatis porro quisquam reiciendis similique sit tempore tenetur voluptatum! Commodi dicta, dignissimos doloribus, eaque, eveniet ex hic ipsum porro quia rem sapiente tempore?
     </div>
 </template>
 
@@ -9,3 +9,8 @@
         name: 'YgdMain',
     };
 </script>
+
+
+<style lang="scss" scoped>
+
+</style>

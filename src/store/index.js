@@ -8,6 +8,8 @@ export default new Vuex.Store( {
     state: {
         user: {
             id: undefined,
+            awardCoins: undefined,
+            realCoins: undefined,
             avatar: undefined,
             email: undefined,
             dateRegistration: undefined,
