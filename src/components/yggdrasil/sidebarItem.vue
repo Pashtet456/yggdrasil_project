@@ -9,7 +9,7 @@
         </router-link>
     </div>
 </template>
-
+Pas
 <script>
     export default {
         name: 'SidebarItem',
