@@ -1,6 +1,6 @@
 <template>
     <div class="sidebar">
-        <router-link to="/">
+        <router-link to="/lotr/">
             <v-img
                 alt="Vuetify Logo"
                 contain

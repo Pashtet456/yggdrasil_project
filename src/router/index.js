@@ -18,7 +18,7 @@ const routes = [
     },
     {
         path: '/donate',
-        name: 'YggDonate',
+        name: 'YgdDonate',
         component: () => import( '../views/yggdrasil/YggdrasilDonate' ),
     },
     {

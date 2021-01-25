@@ -21,14 +21,13 @@ export default new Vuex.Store( {
     },
     getters: {
         userIsLogin: state => state.user.id !== undefined,
-        currentProject: state => state.app.project,
     },
     mutations: {
         changeCurrentProject( state, project ) {
             if ( project === 'yggdrasil' ) {
-                this.state.app.currentProject = 'yggdrasil';
+                this.state.app.project = 'yggdrasil';
             } else if ( project === 'lotr' ) {
-                this.state.app.currentProject = 'lotr';
+                this.state.app.project = 'lotr';
             }
         },
     },
