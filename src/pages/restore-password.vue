@@ -7,7 +7,7 @@
 <script>
     import RestorePasswordForm from '../components/RestorePasswordForm';
     export default {
-        name: 'RestorePassword',
+        name: 'RePass',
         components: { RestorePasswordForm },
     };
 </script>
