@@ -37,14 +37,19 @@ const routes = [
         component: () => import( '../views/Auth' ),
     },
     {
-        path: '/registration',
-        name: 'Registration',
-        component: () => import( '../views/Registration' ),
+        path: '/reg',
+        name: 'Reg',
+        component: () => import( '../views/Reg' ),
     },
     {
         path: '/restorePassword',
         name: 'RestorePassword',
         component: () => import( '../views/RestorePassword' ),
+    },
+    {
+        path: '/cabinet',
+        name: 'Cabinet',
+        component: () => import( '../views/Cabinet' ),
     },
 ];
 

@@ -33,11 +33,11 @@
                     Войти
                 </v-btn>
                 <v-spacer/>
-                <router-link to="/registration" class="header__nav-login header__nav-item">
+                <router-link to="/reg" class="header__nav-login header__nav-item">
                     Зарегистрироваться
                 </router-link>
                 <v-spacer/>
-                <router-link to="/restorePassword" class="header__nav-login header__nav-item">
+                <router-link to="/restorePass" class="header__nav-login header__nav-item">
                     Забыли пароль?
                 </router-link>
             </div>
