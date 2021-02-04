@@ -17,7 +17,7 @@
 
             <!--Не авторизованный пользователь-->
             <template v-else>
-                <router-link to="/auth" class="header__nav-login header__nav-item">
+                <router-link to="/authorization" class="header__nav-login header__nav-item">
                     Войти
                 </router-link>
             </template>
@@ -37,7 +37,7 @@
             },
         },
         computed: {
-            ...mapGetters( ['userIsLogin'] ),
+            ...mapGetters( 'user', ['userIsLogin'] ),
         },
     };
 </script>

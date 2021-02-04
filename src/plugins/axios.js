@@ -1,61 +1,44 @@
-"use strict";
+import axios                              from 'axios';
+import { RequestError, ApiResponseError } from '~/lib/classes/error';
 
-import Vue from 'vue';
-import axios from "axios";
-
-// Full config:  https://github.com/axios/axios#request-config
-// axios.defaults.baseURL = process.env.baseURL || process.env.apiUrl || '';
-// axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
-// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-
-let config = {
-  // baseURL: process.env.baseURL || process.env.apiUrl || ""
-  // timeout: 60 * 1000, // Timeout
-  // withCredentials: true, // Check cross-site Access-Control
+const config = {
+    baseURL: '',
+    timeout: 60 * 1000,
+    withCredentials: true,
 };
+const instance = axios.create( config );
 
-const _axios = axios.create( config );
+instance.interceptors.request.use(
+    function( config ) {
+        return config;
+    },
+    function( e ) {
+        // The request was canceled by client with axios cancelToken
+        if ( axios.isCancel( e ) ) return;
 
-_axios.interceptors.request.use(
-  function( config ) {
-    // Do something before request is sent
-      return config;
-  },
-  function( error ) {
-    // Do something with request error
-      return Promise.reject( error );
-  },
+        // The request was made but no response was received
+        const { status, statusText } = e.request;
+        return Promise.reject( new RequestError( status, statusText ) );
+    },
 );
 
-// Add a response interceptor
-_axios.interceptors.response.use(
-  function( response ) {
-    // Do something with response data
-      return response;
-  },
-  function( error ) {
-    // Do something with response error
-      return Promise.reject( error );
-  },
+instance.interceptors.response.use(
+    function( response ) {
+        // The request was made and the server responded with a status code in the range of 2xx
+        const { error, errorMessage, result } = response.data;
+
+        if ( error ) {
+            throw new ApiResponseError( errorMessage );
+        }
+
+        response.data = result;
+        return response;
+    },
+    function( e ) {
+        // The request was made and the server responded with a status code that falls out of the range of 2xx
+        const { status, statusText } = e.response;
+        return Promise.reject( new RequestError( status, statusText ) );
+    },
 );
 
-Plugin.install = function( Vue, options ) {
-    Vue.axios = _axios;
-    window.axios = _axios;
-    Object.defineProperties( Vue.prototype, {
-        axios: {
-            get() {
-                return _axios;
-            },
-        },
-        $axios: {
-            get() {
-                return _axios;
-            },
-        },
-    } );
-};
-
-Vue.use( Plugin );
-
-export default Plugin;
+export { instance as $axios };

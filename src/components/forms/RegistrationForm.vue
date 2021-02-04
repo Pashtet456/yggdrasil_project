@@ -47,7 +47,7 @@
                     Validate
                 </v-btn>
                 <v-spacer/>
-                <router-link to="/auth" class="header__nav-login header__nav-item">
+                <router-link to="/authorization" class="header__nav-login header__nav-item">
                     Войти
                 </router-link>
             </div>

@@ -22,7 +22,7 @@
 
         <slot name="header"></slot>
 
-        <slot name="body" v-bind="{rules, masks}"></slot>
+        <slot name="body" v-bind="{rules}"></slot>
 
         <slot name="footer">
             <v-btn

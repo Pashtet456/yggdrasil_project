@@ -17,9 +17,9 @@
 </template>
 
 <script>
-    import YggdrasilHeader from "../src/components/yggdrasil/layout/YggdrasilHeader";
-    import SidebarItem     from '../src/components/yggdrasil/sidebarItem';
-    import LotrHeader      from '../src/components/lotr/LotrHeader';
+    import YggdrasilHeader from "../src/layouts/yggdrasil/yggdrasil-header";
+    import SidebarItem     from '../src/layouts/yggdrasil/sidebar-item';
+    import LotrHeader      from '../src/layouts/lotr/lotr-header';
 
     export default {
         name: 'App',

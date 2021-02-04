@@ -43,10 +43,10 @@
 </template>
 
 <script>
-    import ListItemsMenu from '../yggdrasil/Header/ListItemsMenu';
+    import ListItemsMenu from '../../views/menus/ListItemsMenu';
 
     export default {
-        name: 'LotrHeader',
+        name: 'AppHeader',
         components: {
             ListItemsMenu,
         },
@@ -54,11 +54,15 @@
             menu: [
                 {
                     text: 'Главная',
-                    link: '/lotr/',
+                    link: '/',
                 },
                 {
                     text: 'Правила',
-                    link: '/lotr/donate',
+                    link: '/rules',
+                },
+                {
+                    text: 'Донат',
+                    link: '/donate',
                 },
             ],
         } ),

@@ -43,10 +43,10 @@
 </template>
 
 <script>
-    import ListItemsMenu from '../Header/ListItemsMenu';
+    import ListItemsMenu from '../../views/menus/ListItemsMenu';
 
     export default {
-        name: 'AppHeader',
+        name: 'LotrHeader',
         components: {
             ListItemsMenu,
         },
@@ -54,15 +54,11 @@
             menu: [
                 {
                     text: 'Главная',
-                    link: '/',
+                    link: '/lotr/',
                 },
                 {
                     text: 'Правила',
-                    link: '/rules',
-                },
-                {
-                    text: 'Донат',
-                    link: '/donate',
+                    link: '/lotr/donate',
                 },
             ],
         } ),

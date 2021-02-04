@@ -2,54 +2,54 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Vuex from '../store/index';
 
-
 Vue.use( VueRouter );
 
 const routes = [
     {
         path: '/',
-        name: 'YgdMain',
-        component: () => import( 'src/views/yggdrasil/yggdrasil-main' ),
+        name: 'YggdrasilMain',
+        component: () => import( '../pages/yggdrasil/yggdrasil-main' ),
+        meta: { title:'Главная' },
     },
     {
         path: '/rules',
-        name: 'YgdRules',
-        component: () => import( 'src/views/yggdrasil/yggdrasil-rules' ),
+        name: 'YggdrasilRules',
+        component: () => import( '../pages/yggdrasil/yggdrasil-rules' ),
     },
     {
         path: '/donate',
-        name: 'YgdDonate',
-        component: () => import( 'src/views/yggdrasil/yggdrasil-donate' ),
+        name: 'YggdrasilDonate',
+        component: () => import( '../pages/yggdrasil/yggdrasil-donate' ),
     },
     {
         path: '/lotr/',
         name: 'LotrMain',
-        component: () => import( 'src/views/lotr/lotr-main' ),
+        component: () => import( '../pages/lotr/lotr-main' ),
     },
     {
         path: '/lotr/donate',
         name: 'LotrDonate',
-        component: () => import( 'src/views/lotr/lotr-donate' ),
+        component: () => import( '../pages/lotr/lotr-donate' ),
     },
     {
-        path: '/auth',
-        name: 'Auth',
-        component: () => import( 'src/views/authorization' ),
+        path: '/authorization',
+        name: 'Authorization',
+        component: () => import( '../pages/authorization' ),
     },
     {
-        path: '/reg',
-        name: 'Reg',
-        component: () => import( 'src/views/registration' ),
+        path: '/registration',
+        name: 'Registration',
+        component: () => import( '../pages/registration' ),
     },
     {
-        path: '/repass',
-        name: 'RePass',
-        component: () => import( 'src/views/restore-password' ),
+        path: '/restore-password',
+        name: 'RestorePassword',
+        component: () => import( '../pages/restore-password' ),
     },
     {
         path: '/cabinet',
         name: 'Cabinet',
-        component: () => import( 'src/views/cabinet' ),
+        component: () => import( '../pages/cabinet' ),
     },
 ];
 
@@ -60,11 +60,13 @@ const router = new VueRouter( {
 } );
 
 router.beforeEach( ( to, from, next ) => {
-    if ( to.name.match( /Ygd/ ) ) {
-        Vuex.commit( 'changeCurrentProject', 'yggdrasil' );
+    document.title = to.meta.title;
+
+    if ( to.name.match( /Yggdrasil/ ) ) {
+        Vuex.commit( 'changeCurrentProject','yggdrasil' );
     } else if ( to.name.match( /Lotr/ ) ) {
         Vuex.commit( 'changeCurrentProject', 'lotr' );
-    }
+    } else Vuex.commit( 'changeCurrentProject','yggdrasil' );
     next();
 },
 );

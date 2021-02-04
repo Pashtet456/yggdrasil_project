@@ -1,14 +1,14 @@
 <template>
     <v-container class="yggdrasil-form">
-        <auth-form/>
+        <AppAuthForm/>
     </v-container>
 </template>
 
 <script>
-    import AuthForm from '../components/AuthForm';
+    import AppAuthForm from '~/components/forms/AppAuthForm';
     export default {
         name: 'Auth',
-        components: { AuthForm },
+        components: { AppAuthForm },
     };
 </script>
 
