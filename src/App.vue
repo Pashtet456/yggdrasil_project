@@ -7,23 +7,26 @@
                 <router-view/>
             </v-container>
         </v-main>
+        <alert/>
     </v-app>
     <v-app v-else-if="currentProject === 'lotr'">
         <LotrHeader/>
         <v-main>
             <router-view/>
         </v-main>
+        <alert/>
     </v-app>
 </template>
 
 <script>
-    import YggdrasilHeader from "../src/layouts/yggdrasil/yggdrasil-header";
-    import SidebarItem     from '../src/layouts/yggdrasil/sidebar-item';
-    import LotrHeader      from '../src/layouts/lotr/lotr-header';
+    import YggdrasilHeader from "~/layouts/yggdrasil/yggdrasil-header";
+    import SidebarItem     from '~/layouts/yggdrasil/sidebar-item';
+    import LotrHeader      from '~/layouts/lotr/lotr-header';
+    import Alert           from '~/views/alerts/Alert';
 
     export default {
         name: 'App',
-        components: { LotrHeader, SidebarItem, YggdrasilHeader },
+        components: { Alert, LotrHeader, SidebarItem, YggdrasilHeader },
         data: () => ( {
         } ),
         computed: {

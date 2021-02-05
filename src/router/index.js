@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Vuex from '../store/index';
+import Vuex from '~/store/index';
 
 Vue.use( VueRouter );
 
@@ -8,48 +8,48 @@ const routes = [
     {
         path: '/',
         name: 'YggdrasilMain',
-        component: () => import( '../pages/yggdrasil/yggdrasil-main' ),
+        component: () => import( '~/pages/yggdrasil/yggdrasil-main' ),
         meta: { title:'Главная' },
     },
     {
         path: '/rules',
         name: 'YggdrasilRules',
-        component: () => import( '../pages/yggdrasil/yggdrasil-rules' ),
+        component: () => import( '~/pages/yggdrasil/yggdrasil-rules' ),
     },
     {
         path: '/donate',
         name: 'YggdrasilDonate',
-        component: () => import( '../pages/yggdrasil/yggdrasil-donate' ),
+        component: () => import( '~/pages/yggdrasil/yggdrasil-donate' ),
     },
     {
         path: '/lotr/',
         name: 'LotrMain',
-        component: () => import( '../pages/lotr/lotr-main' ),
+        component: () => import( '~/pages/lotr/lotr-main' ),
     },
     {
         path: '/lotr/donate',
         name: 'LotrDonate',
-        component: () => import( '../pages/lotr/lotr-donate' ),
+        component: () => import( '~/pages/lotr/lotr-donate' ),
     },
     {
         path: '/authorization',
         name: 'Authorization',
-        component: () => import( '../pages/authorization' ),
+        component: () => import( '~/pages/authorization' ),
     },
     {
         path: '/registration',
         name: 'Registration',
-        component: () => import( '../pages/registration' ),
+        component: () => import( '~/pages/registration' ),
     },
     {
-        path: '/restore-password',
-        name: 'RestorePassword',
-        component: () => import( '../pages/restore-password' ),
+        path: '/forgot-password',
+        name: 'ForgotPassword',
+        component: () => import( '~/pages/forgot-password' ),
     },
     {
         path: '/cabinet',
         name: 'Cabinet',
-        component: () => import( '../pages/cabinet' ),
+        component: () => import( '~/pages/cabinet' ),
     },
 ];
 
@@ -66,7 +66,9 @@ router.beforeEach( ( to, from, next ) => {
         Vuex.commit( 'changeCurrentProject','yggdrasil' );
     } else if ( to.name.match( /Lotr/ ) ) {
         Vuex.commit( 'changeCurrentProject', 'lotr' );
-    } else Vuex.commit( 'changeCurrentProject','yggdrasil' );
+    } else if ( !from.name ) {
+        Vuex.commit( 'changeCurrentProject','yggdrasil' );
+    }
     next();
 },
 );
