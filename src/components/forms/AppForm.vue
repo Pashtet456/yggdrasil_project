@@ -2,6 +2,7 @@
     <div class="l-form">
         <!-- Форма -->
         <v-form ref="form"
+                v-model="isFormValid"
                 @submit.prevent="submit">
             <!-- Хэдер -->
             <slot name="header"></slot>
@@ -13,7 +14,9 @@
 
                 <!-- Кнопка "Отправить" -->
                 <slot name="submit" v-bind="{ loading, submit }">
-                    <v-btn ref="submit"
+                    <v-btn v-if="!disableDefaultSubmit"
+                           ref="submit"
+                           :disabled="!isFormValid"
                            block
                            :loading="loading" type="submit">
                         {{ submitText }}
@@ -45,6 +48,10 @@
                 type: Boolean,
                 default: false,
             },
+            disableDefaultSubmit: {
+                type: Boolean,
+                default: false,
+            },
             values: {
                 type: Object,
                 required: true,
@@ -55,6 +62,7 @@
             },
         },
         data: vm => ( {
+            isFormValid: false,
             loading: false,
             privacy: false,
             rules: {
@@ -69,6 +77,20 @@
                     return !isEmpty || 'Обязательное поле';
                 },
                 phone: v => !v || v.length === 10 || 'Телефон не может быть меньше 10 символов',
+                name: v => {
+                    if ( !v ) return true;
+                    if ( !/^[a-zA-Z0-9]+$/.test( v ) ) {
+                        return 'Никнейм должен содержать только латинские буквы и цифры';
+                    }
+                    if ( v.length > 15 ) {
+                        return 'Пароль должен быть не более 15 символов';
+                    }
+                    if ( v.length < 3 ) {
+                        return 'Пароль должен быть не менее 3 символов';
+                    }
+
+                    return true;
+                },
                 email: v => !v || /.+@.+\..+/.test( v ) || 'Некорректный email',
                 password: v => {
                     if ( !v ) return true;

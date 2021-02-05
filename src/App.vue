@@ -1,13 +1,13 @@
 <template>
     <v-app v-if="currentProject === 'yggdrasil'">
         <YggdrasilHeader class="yggdrasil yggdrasil-header"/>
-        <sidebar-item class="sidebar"/>
         <v-main>
             <v-container class="yggdrasil yggdrasil-main">
                 <router-view/>
             </v-container>
         </v-main>
         <alert/>
+        <sidebar-items/>
     </v-app>
     <v-app v-else-if="currentProject === 'lotr'">
         <LotrHeader/>
@@ -20,13 +20,13 @@
 
 <script>
     import YggdrasilHeader from "~/layouts/yggdrasil/yggdrasil-header";
-    import SidebarItem     from '~/layouts/yggdrasil/sidebar-item';
     import LotrHeader      from '~/layouts/lotr/lotr-header';
     import Alert           from '~/views/alerts/Alert';
+    import SidebarItems    from '~/components/sidebars/sidebarItems';
 
     export default {
         name: 'App',
-        components: { Alert, LotrHeader, SidebarItem, YggdrasilHeader },
+        components: { SidebarItems, Alert, LotrHeader, YggdrasilHeader },
         data: () => ( {
         } ),
         computed: {

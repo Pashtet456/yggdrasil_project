@@ -7,7 +7,7 @@
                     <v-img
                         alt="Vuetify Logo"
                         contain
-                        :src="require('/src/assets/img/logo.png')"
+                        :src="require('~/assets/img/logo.png')"
                         :width="this.$vuetify.application.top - 5"/>
                 </router-link>
                 <span>Yggdrasil project</span>
@@ -24,7 +24,7 @@
                     <v-img
                         alt="Vuetify Logo"
                         contain
-                        :src="require('/src/assets/img/vk.png')"
+                        :src="require('~/assets/img/vk.png')"
                         :width="this.$vuetify.application.top - 5"/>
                 </router-link>
             </div>
@@ -34,7 +34,7 @@
                     <v-img
                         alt="Vuetify Logo"
                         contain
-                        :src="require('/src/assets/img/dis.png')"
+                        :src="require('~/assets/img/dis.png')"
                         :width="this.$vuetify.application.top - 5"/>
                 </router-link>
             </div>
