@@ -63,11 +63,11 @@ router.beforeEach( ( to, from, next ) => {
     document.title = to.meta.title;
 
     if ( to.name.match( /Yggdrasil/ ) ) {
-        Vuex.commit( 'changeCurrentProject','yggdrasil' );
+        Vuex.commit( 'app/changeCurrentProject','yggdrasil' );
     } else if ( to.name.match( /Lotr/ ) ) {
-        Vuex.commit( 'changeCurrentProject', 'lotr' );
+        Vuex.commit( 'app/changeCurrentProject', 'lotr' );
     } else if ( !from.name ) {
-        Vuex.commit( 'changeCurrentProject','yggdrasil' );
+        Vuex.commit( 'app/changeCurrentProject','yggdrasil' );
     }
     next();
 },

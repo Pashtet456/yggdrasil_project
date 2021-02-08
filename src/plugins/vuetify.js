@@ -8,18 +8,6 @@ export default new Vuetify( {
     icons: {
         iconfont: 'mdi',
     },
-    theme: {
-        customProperties: true,
-        themes: {
-            dark: {
-                yggdrasilMain: '#000',
-                yggdrasilError: '#000',
-                lotrd: '#f2f',
-                lotrError: '#f11',
-            },
-        },
-        dark: true,
-    },
-},
-);
+    theme: { disable: true },
+} );
 

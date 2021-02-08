@@ -1,51 +1,61 @@
 .app {
-    font-family: $body-font-family;
-    font-size: $font-size-root;
-    line-height: $line-height-root;
+    //font-family: $body-font-family;
+    //font-size: $font-size-root;
+    //line-height: $line-height-root;
     box-sizing: border-box;
     word-break: normal;
     overflow: hidden;
 
-    &::-ms-clear,
-    &::-ms-reveal {
-        display: none;
-    }
-
     *,
     ::before,
     ::after {
-        background-repeat: no-repeat; /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
+        background-repeat: no-repeat;
         box-sizing: inherit;
     }
 
     ::before,
     ::after {
-        text-decoration: inherit; /* Inherit text-decoration and vertical align to ::before and ::after pseudo elements */
+        text-decoration: inherit;
         vertical-align: inherit;
     }
 }
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
 
-@include theme('app') using($theme) {
-    color: map-deep-get($theme, 'text', 'primary');
-    background: map-get($theme, 'background');
+@include project('v-application') using($project) {
 
-    .primary {
-        @include background-color(map-get($theme, 'primary'));
+    & .main {
+        max-width: map-deep-get($project, 'main', 'max-width') !important;
+        margin: auto;
+        text-align: center;
+    }
 
-        &--text {
-            @include text-color(map-get($theme, 'primary'))
+    &-form {
+        max-width: 500px;
+        margin-top: 50px;
+    }
+
+    & .v-input input {
+        color: map-deep-get($project, 'forms', 'color') !important;
+    }
+
+    & .error--text {
+        color: map-deep-get($project, 'texts', 'error--text') !important;
+    }
+
+    & .primary--text {
+        color: map-deep-get($project, 'texts', 'primary--text') !important;
+    }
+
+    & a {
+        color: sandybrown !important;
+
+        &:hover {
+            color: cornflowerblue !important;
         }
-    }
-
-    .text--primary {
-        color: map-deep-get($theme, 'text', 'primary');
-    }
-
-    .text--secondary {
-        color: map-deep-get($theme, 'text', 'secondary');
-    }
-
-    .link {
-        color: map-get($theme, 'primary');
     }
 }

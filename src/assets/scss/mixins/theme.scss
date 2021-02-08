@@ -1,9 +1,8 @@
-@mixin theme($component) {
-    .theme--light.#{$component} {
-        @content($material-light);
+@mixin project($component) {
+    .yggdrasil.#{$component} {
+        @content($yggdrasil-project);
     }
-
-    .theme--dark.#{$component} {
-        @content($material-dark);
-    }
+    //.lotr.#{$component} {
+    //    @content($lotr-project);
+    //}
 }

@@ -1,4 +1,5 @@
 export default {
+    namespaced: true,
     state: {
         project: undefined,
     },
@@ -7,7 +8,7 @@ export default {
     },
     mutations: {
         changeCurrentProject( state, project ) {
-            this.state.app.project = project;
+            state.project = project;
         },
     },
     actions: {

@@ -12,4 +12,11 @@ module.exports = {
             extensions: ['.js', '.vue', '.json'],
         },
     },
+    css: {
+        loaderOptions: {
+            scss: {
+                prependData: '@import "@/assets/scss/main.scss";',
+            },
+        },
+    },
 };

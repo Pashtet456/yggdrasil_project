@@ -2,12 +2,12 @@
     <div class="sidebar">
         <template v-if="position==='left'">
             <app-sidebar-items
-                :items="items"
+                :items="items.slice(0,items.length/2)"
                 position="left"/>
         </template>
         <template v-if="position==='right'">
             <app-sidebar-items
-                :items="items"
+                :items="items.slice(items.length/2,items.length)"
                 position="right"/>
         </template>
     </div>
@@ -30,22 +30,42 @@
                     {
                         source: 'logo.png',
                         link: '/lotr',
-                        minecraftServerUrl: '123',
+                        minecraftServerUrl: '11',
                     },
                     {
                         source: 'logo.png',
                         link: '/lotr',
-                        minecraftServerUrl: '3',
+                        minecraftServerUrl: '12',
                     },
                     {
                         source: 'logo.png',
                         link: '/lotr',
-                        minecraftServerUrl: '545',
+                        minecraftServerUrl: '13',
                     },
                     {
                         source: 'logo.png',
                         link: '/lotr',
-                        minecraftServerUrl: '123123',
+                        minecraftServerUrl: '14',
+                    },
+                    {
+                        source: 'logo.png',
+                        link: '/lotr',
+                        minecraftServerUrl: '21',
+                    },
+                    {
+                        source: 'logo.png',
+                        link: '/lotr',
+                        minecraftServerUrl: '22',
+                    },
+                    {
+                        source: 'logo.png',
+                        link: '/lotr',
+                        minecraftServerUrl: '23',
+                    },
+                    {
+                        source: 'logo.png',
+                        link: '/lotr',
+                        minecraftServerUrl: '24',
                     },
                 ],
             };
