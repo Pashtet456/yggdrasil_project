@@ -7,7 +7,8 @@
             </v-container>
         </v-main>
         <alert/>
-        <sidebar-items/>
+        <side-bar-items position="left"/>
+        <side-bar-items position="right"/>
     </v-app>
     <v-app v-else-if="currentProject === 'lotr'">
         <LotrHeader/>
@@ -22,11 +23,11 @@
     import YggdrasilHeader from "~/layouts/yggdrasil/yggdrasil-header";
     import LotrHeader      from '~/layouts/lotr/lotr-header';
     import Alert           from '~/views/alerts/Alert';
-    import SidebarItems    from '~/components/sidebars/sidebarItems';
+    import SideBarItems    from '~/views/sidebars/SideBarItems';
 
     export default {
         name: 'App',
-        components: { SidebarItems, Alert, LotrHeader, YggdrasilHeader },
+        components: { SideBarItems, Alert, LotrHeader, YggdrasilHeader },
         data: () => ( {
         } ),
         computed: {
