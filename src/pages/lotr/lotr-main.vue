@@ -1,4 +1,4 @@
-<template>
+<template class="main">
     <v-card class="ma-auto" rounded width="500px">
         <app-nick-name-input-form/>
     </v-card>

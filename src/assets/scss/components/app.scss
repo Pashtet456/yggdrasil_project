@@ -35,7 +35,7 @@
     }
 
     &-form {
-        max-width: 500px;
+        max-width: 800px;
         margin-top: 50px;
     }
 
@@ -49,13 +49,5 @@
 
     & .primary--text {
         color: map-deep-get($project, 'texts', 'primary--text') !important;
-    }
-
-    & a {
-        color: sandybrown !important;
-
-        &:hover {
-            color: cornflowerblue !important;
-        }
     }
 }

@@ -1,4 +1,4 @@
-<template>
+<template class="rules">
     <div>YgdRules</div>
 </template>
 

@@ -1,4 +1,4 @@
-<template>
+<template class="donate">
     <div>LotrDonate</div>
 </template>
 

@@ -1,4 +1,4 @@
-<template>
+<template class="donate">
     <div>Empty</div>
 </template>
 

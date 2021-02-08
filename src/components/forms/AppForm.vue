@@ -1,33 +1,31 @@
 <template>
-    <div class="l-form">
-        <!-- Форма -->
-        <v-form ref="form"
-                v-model="isFormValid"
-                @submit.prevent="submit">
-            <!-- Хэдер -->
-            <slot name="header"></slot>
-            <!-- Тело формы -->
-            <slot name="body"
-                  v-bind="{ rules, loading, submit, clear }">
-                <!-- Поля формы -->
-                <slot name="fields" v-bind="{ rules, loading }"></slot>
+    <!-- Форма -->
+    <v-form ref="form"
+            v-model="isFormValid"
+            @submit.prevent="submit">
+        <!-- Хэдер -->
+        <slot name="header"></slot>
+        <!-- Тело формы -->
+        <slot name="body"
+              v-bind="{ rules, loading, submit, clear }">
+            <!-- Поля формы -->
+            <slot name="fields" v-bind="{ rules, loading }"></slot>
 
-                <!-- Кнопка "Отправить" -->
-                <slot name="submit" v-bind="{ loading, submit }">
-                    <v-btn v-if="!disableDefaultSubmit"
-                           ref="submit"
-                           :disabled="!isFormValid"
-                           block
-                           :loading="loading" type="submit">
-                        {{ submitText }}
-                    </v-btn>
-                </slot>
+            <!-- Кнопка "Отправить" -->
+            <slot name="submit" v-bind="{ loading, submit }">
+                <v-btn v-if="!disableDefaultSubmit"
+                       ref="submit"
+                       :disabled="!isFormValid"
+                       block
+                       :loading="loading" type="submit">
+                    {{ submitText }}
+                </v-btn>
             </slot>
+        </slot>
 
-            <!-- Футер -->
-            <slot name="footer"></slot>
-        </v-form>
-    </div>
+        <!-- Футер -->
+        <slot name="footer"></slot>
+    </v-form>
 </template>
 
 <script>

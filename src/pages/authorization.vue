@@ -1,7 +1,5 @@
-<template>
-    <v-container class="yggdrasil-form">
-        <AppAuthForm/>
-    </v-container>
+<template class="form">
+    <AppAuthForm/>
 </template>
 
 <script>

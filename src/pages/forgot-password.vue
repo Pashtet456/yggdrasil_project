@@ -1,7 +1,5 @@
-<template>
-    <v-container class="yggdrasil-form">
-        <app-forgot-passport-form/>
-    </v-container>
+<template class="form">
+    <app-forgot-passport-form/>
 </template>
 
 <script>

@@ -1,7 +1,5 @@
-<template>
-    <v-container class="yggdrasil-form">
-        <app-registration-form/>
-    </v-container>
+<template class="form">
+    <app-registration-form/>
 </template>
 
 <script>
