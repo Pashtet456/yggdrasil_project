@@ -28,15 +28,15 @@
 
 @include project('v-application') using($project) {
 
-    & .main {
+    & .v-main .v-container{
         max-width: map-deep-get($project, 'main', 'max-width') !important;
         margin: auto;
         text-align: center;
     }
 
-    &-form {
+    & .v-form {
         max-width: 800px;
-        margin-top: 50px;
+        margin:  50px auto 0 auto;
     }
 
     & .v-input input {

@@ -5,7 +5,7 @@
               :values="values"
               submit-text="Войти">
         <template v-slot:header>
-            <div class="text-left mb-2 text-h5">Вход</div>
+            <div class="text-left mb-2">Вход</div>
         </template>
 
         <template v-slot:fields="{ rules }">

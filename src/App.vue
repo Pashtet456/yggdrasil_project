@@ -1,21 +1,21 @@
 <template>
     <v-app v-if="currentProject === 'yggdrasil'" class="yggdrasil">
-        <yggdrasil-header class="header"/>
-        <v-main class="main">
+        <yggdrasil-header/>
+        <v-main :style="'background: url(' + require('/src/assets/img/yggdrasilMainBg.webp') + ') no-repeat center center fixed !important;' ">
             <v-container>
                 <router-view/>
             </v-container>
         </v-main>
-        <alert class="alert"/>
-        <side-bar-items position="left" class="sidebar"/>
-        <side-bar-items position="right" class="sidebar"/>
+        <alert/>
+        <side-bar-items position="left"/>
+        <side-bar-items position="right"/>
     </v-app>
     <v-app v-else-if="currentProject === 'lotr'" class="lotr">
-        <lotr-header class="header"/>
-        <v-main class="main">
+        <lotr-header/>
+        <v-main>
             <router-view/>
         </v-main>
-        <alert class="alert"/>
+        <alert/>
     </v-app>
 </template>
 

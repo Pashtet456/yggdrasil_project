@@ -4,7 +4,9 @@
             v-model="isFormValid"
             @submit.prevent="submit">
         <!-- Хэдер -->
-        <slot name="header"></slot>
+        <div class="primary--text">
+            <slot name="header"></slot>
+        </div>
         <!-- Тело формы -->
         <slot name="body"
               v-bind="{ rules, loading, submit, clear }">
